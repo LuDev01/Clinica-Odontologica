@@ -1,0 +1,213 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32744 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:272), pid=30960, tid=0x0000000000005c58
+#
+# JRE version: OpenJDK Runtime Environment (8.0_372-b07) (build 1.8.0_372-b07)
+# Java VM: OpenJDK 64-Bit Server VM (25.372-b07 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000289b1497800):  JavaThread "C1 CompilerThread11" daemon [_thread_in_vm, id=23640, stack(0x000000bb7dc00000,0x000000bb7dd00000)]
+
+Stack: [0x000000bb7dc00000,0x000000bb7dd00000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C1:    170  124       3       java.nio.charset.CharsetDecoder::implReset (1 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000289b1511000 JavaThread "Service Thread" daemon [_thread_blocked, id=17820, stack(0x000000bb7dd00000,0x000000bb7de00000)]
+=>0x00000289b1497800 JavaThread "C1 CompilerThread11" daemon [_thread_in_vm, id=23640, stack(0x000000bb7dc00000,0x000000bb7dd00000)]
+  0x00000289b1497000 JavaThread "C1 CompilerThread10" daemon [_thread_blocked, id=16144, stack(0x000000bb7db00000,0x000000bb7dc00000)]
+  0x00000289b149b800 JavaThread "C1 CompilerThread9" daemon [_thread_in_vm, id=13256, stack(0x000000bb7da00000,0x000000bb7db00000)]
+  0x00000289b149e000 JavaThread "C1 CompilerThread8" daemon [_thread_blocked, id=32908, stack(0x000000bb7d900000,0x000000bb7da00000)]
+  0x00000289b1498800 JavaThread "C2 CompilerThread7" daemon [_thread_blocked, id=4076, stack(0x000000bb7d800000,0x000000bb7d900000)]
+  0x00000289b1490000 JavaThread "C2 CompilerThread6" daemon [_thread_blocked, id=31568, stack(0x000000bb7d700000,0x000000bb7d800000)]
+  0x00000289b1483000 JavaThread "C2 CompilerThread5" daemon [_thread_blocked, id=15756, stack(0x000000bb7d600000,0x000000bb7d700000)]
+  0x00000289b1480800 JavaThread "C2 CompilerThread4" daemon [_thread_blocked, id=5476, stack(0x000000bb7d500000,0x000000bb7d600000)]
+  0x00000289b147d000 JavaThread "C2 CompilerThread3" daemon [_thread_blocked, id=4532, stack(0x000000bb7d400000,0x000000bb7d500000)]
+  0x00000289b147c000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=19040, stack(0x000000bb7d300000,0x000000bb7d400000)]
+  0x00000289b1479000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=27640, stack(0x000000bb7d200000,0x000000bb7d300000)]
+  0x00000289b1477000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=33220, stack(0x000000bb7d100000,0x000000bb7d200000)]
+  0x00000289b1474800 JavaThread "Monitor Ctrl-Break" daemon [_thread_in_native, id=34388, stack(0x000000bb7d000000,0x000000bb7d100000)]
+  0x00000289b13e1000 JavaThread "Attach Listener" daemon [_thread_blocked, id=14648, stack(0x000000bb7cf00000,0x000000bb7d000000)]
+  0x00000289b13de000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2296, stack(0x000000bb7ce00000,0x000000bb7cf00000)]
+  0x00000289ae6d1800 JavaThread "Finalizer" daemon [_thread_blocked, id=28604, stack(0x000000bb7cd00000,0x000000bb7ce00000)]
+  0x00000289b13c0800 JavaThread "Reference Handler" daemon [_thread_blocked, id=4384, stack(0x000000bb7cc00000,0x000000bb7cd00000)]
+  0x0000028993c74000 JavaThread "main" [_thread_in_vm, id=20800, stack(0x000000bb7bd00000,0x000000bb7be00000)]
+
+Other Threads:
+  0x00000289ae6c2000 VMThread [stack: 0x000000bb7cb00000,0x000000bb7cc00000] [id=5648]
+  0x00000289b158e000 WatcherThread [stack: 0x000000bb7de00000,0x000000bb7df00000] [id=9428]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000028993c70100] AdapterHandlerLibrary_lock - owner thread: 0x0000028993c74000
+
+heap address: 0x00000006c9400000, size: 3948 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 74240K, used 8968K [0x000000076dc00000, 0x0000000772e80000, 0x00000007c0000000)
+  eden space 64000K, 14% used [0x000000076dc00000,0x000000076e4c2098,0x0000000771a80000)
+  from space 10240K, 0% used [0x0000000772480000,0x0000000772480000,0x0000000772e80000)
+  to   space 10240K, 0% used [0x0000000771a80000,0x0000000771a80000,0x0000000772480000)
+ ParOldGen       total 169472K, used 0K [0x00000006c9400000, 0x00000006d3980000, 0x000000076dc00000)
+  object space 169472K, 0% used [0x00000006c9400000,0x00000006c9400000,0x00000006d3980000)
+ Metaspace       used 3864K, capacity 4704K, committed 4864K, reserved 1056768K
+  class space    used 430K, capacity 464K, committed 512K, reserved 1048576K
+
+Card table byte_map: [0x00000289a4bd0000,0x00000289a5390000] byte_map_base: 0x00000289a1586000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000052fef810
+ Begin Bits: [0x00000289a58c0000, 0x00000289a9670000)
+ End Bits:   [0x00000289a9670000, 0x00000289ad420000)
+
+Polling page: 0x0000028993ef0000
+
+CodeCache: size=245760Kb used=3071Kb max_used=3071Kb free=242688Kb
+ bounds [0x0000028995810000, 0x0000028995b20000, 0x00000289a4810000]
+ total_blobs=385 nmethods=123 adapters=173
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.167 Thread 0x00000289b1497800 nmethod 117 0x0000028995afb690 code [0x0000028995afb880, 0x0000028995afc210]
+Event: 0.167 Thread 0x00000289b149b800  120       1       java.io.File::getPrefixLength (5 bytes)
+Event: 0.167 Thread 0x00000289b149b800 nmethod 120 0x0000028995afb3d0 code [0x0000028995afb520, 0x0000028995afb638]
+Event: 0.168 Thread 0x00000289b149b800  121       3       java.io.WinNTFileSystem::normalize (231 bytes)
+Event: 0.168 Thread 0x00000289b1480800 nmethod 116 0x0000028995afb090 code [0x0000028995afb1c0, 0x0000028995afb338]
+Event: 0.169 Thread 0x00000289b1497000  123       3       java.nio.charset.CharsetDecoder::reset (11 bytes)
+Event: 0.169 Thread 0x00000289b1497800  124       3       java.nio.charset.CharsetDecoder::implReset (1 bytes)
+Event: 0.169 Thread 0x00000289b1497000 nmethod 123 0x0000028995afac50 code [0x0000028995afada0, 0x0000028995afafd8]
+Event: 0.169 Thread 0x00000289b1497000  122       1       java.net.URL::getUserInfo (5 bytes)
+Event: 0.169 Thread 0x00000289b1497000 nmethod 122 0x0000028995afa990 code [0x0000028995afaae0, 0x0000028995afabf8]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (6 events):
+Event: 0.031 Thread 0x0000028993c74000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x000000076dc07cd8) thrown at [J:\jenkins\tmp\workspace\build\src\hotspot\src\share\vm\prims\jni.cpp
+Event: 0.031 Thread 0x0000028993c74000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x000000076dc07fc0) thrown at [J:\jenkins\tmp\workspace\build\src\hotspot\src\share\vm\prims\jni.cpp, line 4012]
+Event: 0.168 Thread 0x0000028993c74000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076e0b6740) thrown at [J:\jenkins\tmp\workspace\build\src\hotspot\src\share\vm\prims\jvm.cpp, line 1514]
+Event: 0.168 Thread 0x0000028993c74000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076e0b6b38) thrown at [J:\jenkins\tmp\workspace\build\src\hotspot\src\share\vm\prims\jvm.cpp, line 1514]
+Event: 0.169 Thread 0x0000028993c74000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076e0bbeb8) thrown at [J:\jenkins\tmp\workspace\build\src\hotspot\src\share\vm\prims\jvm.cpp, line 1514]
+Event: 0.169 Thread 0x0000028993c74000 Exception <a 'java/security/PrivilegedActionException'> (0x000000076e0bc2b0) thrown at [J:\jenkins\tmp\workspace\build\src\hotspot\src\share\vm\prims\jvm.cpp, line 1514]
+
+Events (10 events):
+Event: 0.168 loading class java/io/FileNotFoundException
+Event: 0.168 loading class java/io/FileNotFoundException done
+Event: 0.168 loading class java/security/PrivilegedActionException
+Event: 0.168 loading class java/security/PrivilegedActionException done
+Event: 0.169 loading class java/net/URLClassLoader$3$1
+Event: 0.169 loading class java/net/URLClassLoader$3$1 done
+Event: 0.169 loading class java/util/ResourceBundle$RBClassLoader
+Event: 0.169 loading class java/util/ResourceBundle$RBClassLoader done
+Event: 0.169 loading class java/util/ResourceBundle$RBClassLoader$1
+Event: 0.169 loading class java/util/ResourceBundle$RBClassLoader$1 done
+
+
+Dynamic libraries:
+0x00007ff733aa0000 - 0x00007ff733ae5000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\bin\java.exe
+0x00007ff8c2030000 - 0x00007ff8c2247000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff8c0a50000 - 0x00007ff8c0b14000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff8bf350000 - 0x00007ff8bf6f7000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff8c1db0000 - 0x00007ff8c1e62000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff8c0080000 - 0x00007ff8c0127000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff8c0980000 - 0x00007ff8c0a28000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff8bf780000 - 0x00007ff8bf7a8000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ff8bfe10000 - 0x00007ff8bff25000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff8c0670000 - 0x00007ff8c081e000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\server\jvm.dll
+0x00007ff8bfd30000 - 0x00007ff8bfd56000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff8bff50000 - 0x00007ff8bff79000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff8bf8d0000 - 0x00007ff8bf9e9000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff8bfc90000 - 0x00007ff8bfd2a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff8bf7b0000 - 0x00007ff8bf8c1000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff8a8e90000 - 0x00007ff8a9123000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff8c1fb0000 - 0x00007ff8c1fe1000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff8aeec0000 - 0x00007ff8aeed5000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\verify.dll
+0x00007ff87d2c0000 - 0x00007ff87d35b000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\msvcp140.dll
+0x0000000052810000 - 0x0000000053068000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\server\jvm.dll
+0x00007ff8c08e0000 - 0x00007ff8c08e8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff8b6f00000 - 0x00007ff8b6f0a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff8aed60000 - 0x00007ff8aed69000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff8b80c0000 - 0x00007ff8b80f4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff8c0390000 - 0x00007ff8c0401000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff8be2d0000 - 0x00007ff8be2e8000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff8b8250000 - 0x00007ff8b8260000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\verify.dll
+0x00007ff892240000 - 0x00007ff89226b000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\java.dll
+0x00007ff889730000 - 0x00007ff889760000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\instrument.dll
+0x00007ff8aed70000 - 0x00007ff8aed88000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\zip.dll
+0x00007ff8c1060000 - 0x00007ff8c18bc000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ff8bd240000 - 0x00007ff8bdb36000 	C:\WINDOWS\SYSTEM32\windows.storage.dll
+0x00007ff8c0b20000 - 0x00007ff8c0ea8000 	C:\WINDOWS\System32\combase.dll
+0x00007ff8bd100000 - 0x00007ff8bd23e000 	C:\WINDOWS\SYSTEM32\wintypes.dll
+0x00007ff8c0570000 - 0x00007ff8c0665000 	C:\WINDOWS\System32\SHCORE.dll
+0x00007ff8bfdb0000 - 0x00007ff8bfe0e000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ff8bf280000 - 0x00007ff8bf2a1000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x00007ff8aec10000 - 0x00007ff8aec2a000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.1\bin\breakgen64.dll
+0x00007ff8aea90000 - 0x00007ff8aeaac000 	C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\bin\net.dll
+0x00007ff8be7a0000 - 0x00007ff8be809000 	C:\WINDOWS\system32\mswsock.dll
+
+VM Arguments:
+jvm_args: -ea -Didea.test.cyclic.buffer.size=1048576 -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.1\lib\idea_rt.jar=60763:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.1\bin -Dfile.encoding=UTF-8 
+java_command: com.intellij.rt.junit.JUnitStarter -ideVersion5 -junit5 OdontologoServiceTest,crearOdontologo
+java_class_path (initial): C:\Users\luchi\.m2\repository\org\junit\platform\junit-platform-launcher\1.8.1\junit-platform-launcher-1.8.1.jar;C:\Users\luchi\.m2\repository\org\junit\vintage\junit-vintage-engine\5.8.1\junit-vintage-engine-5.8.1.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.1\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.1\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.1\plugins\junit\lib\junit-rt.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\charsets.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\cldrdata.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\dnsns.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\jaccess.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\localedata.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\nashorn.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\sunec.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\sunmscapi.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\ext\zipfs.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\jce.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\jfr.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\jsse.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\management-agent.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\resources.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\jre\lib\rt.jar;C:\DIGITAL_HOUSE\BIMESTRE 5\BACKEND I\Clin
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-11.0.12
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Microsoft\jdk-11.0.20.8-hotspot\bin;C:\Program Files\Eclipse Adoptium\jdk-11.0.19.7-hotspot\bin;C:\Program Files\Eclipse Adoptium\jdk-8.0.372.7-hotspot\bin;C:\Program Files\Common Files\Siemens\Automation\Simatic OAM\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_291\bin;C:\WINDOWS\system32;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Users\luchi\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Java\jdk-11.0.12\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\dotnet\;C:\Users\luchi\.pyenv\pyenv-win\bin;C:\Users\luchi\.pyenv\pyenv-win\shims;C:\Users\luchi\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\luchi\AppData\Local\Programs\Python\Python311\;C:\Users\luchi\AppData\Local\Microsoft\WindowsApps;C:\Users\luchi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\luchi\AppData\Local\GitHubDesktop\bin;C:\Users\luchi\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Tools\Gradle\gradle-5.1-bin\gradle-5.1\bin;C:\Users\luchi\AppData\Roaming\npm;;C:\Users\luchi\AppData\Local\Programs\oh-my-posh\bin;C:\Users\luchi\.dotnet\tools
+USERNAME=luchi
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 96 Stepping 1, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 11 , 64 bit Build 22621 (10.0.22621.3527)
+
+CPU:total 16 (initial active 16) (16 cores per cpu, 1 threads per core) family 23 model 96 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv, bmi1
+
+Memory: 4k page, physical 16169824k(4860976k free), swap 20364128k(3128k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.372-b07) for windows-amd64 JRE (1.8.0_372-b07), built on Apr 19 2023 08:59:36 by "jenkins" with MS VC++ 15.9 (VS2017)
+
+time: Thu May 16 20:32:31 2024
+timezone: Hora est. Pacífico, Sudamérica
+elapsed time: 0.172239 seconds (0d 0h 0m 0s)
+

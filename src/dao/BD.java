@@ -16,6 +16,10 @@ public class BD {
             "CREATE TABLE DOMICILIOS (ID INT AUTO_INCREMENT PRIMARY KEY, CALLE VARCHAR(100) NOT NULL, NUMERO INT NOT NULL, LOCALIDAD VARCHAR(100) NOT NULL, PROVINCIA VARCHAR(100) NOT NULL)";
     private static final String SQL_PRUEBA="INSERT INTO PACIENTES (NOMBRE, APELLIDO, CEDULA, FECHA_INGRESO, DOMICILIO_ID) VALUES ('Jorgito','Pereyra','111111','2024-05-16', 1), ('German','Fraire','22222','2024-05-10',2); " +
             "INSERT INTO DOMICILIOS  (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES ('Siempre Viva',742,'Springfield','USA'),('Av. Uruguay',345,'Punta del Este','Uruguay')";
+    private static final String SQL_DROP_CREATE_ODON="DROP TABLE IF EXISTS ODONTOLOGOS; " +
+            "CREATE TABLE ODONTOLOGOS (ID INT AUTO_INCREMENT PRIMARY KEY, NUMERO_MATRICULA INT NOT NULL, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL)";
+    private static final String SQL_CREATE_ODONTOLOGO="INSERT INTO ODONTOLOGOS (NUMERO_MATRICULA, NOMBRE, APELLIDO) "+
+            "VALUES (5454,'Carmelita','Morales'),(9987,'Camilo','Torres')";
     public static void crearTablas(){
         Connection connection=null;
         try{
@@ -24,6 +28,8 @@ public class BD {
             statement.execute(SQL_DROP_CREATE_DOM);
             statement.execute(SQL_DROP_CREATE_PAC);
             statement.execute(SQL_PRUEBA);
+            statement.execute(SQL_DROP_CREATE_ODON);
+            statement.execute(SQL_CREATE_ODONTOLOGO);
             logger.info("tabla creada con exito");
 
         }catch(Exception e){

@@ -9,4 +9,5 @@ public interface iDao<T> {
     void actualizar(T t);
 
     List<T> buscarTodos();
+
 }

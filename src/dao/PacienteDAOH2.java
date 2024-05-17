@@ -40,6 +40,13 @@ public class PacienteDAOH2 implements iDao<Paciente> {
 
         }catch (Exception e){
             logger.error(e.getMessage());
+        }finally {
+            try {
+                connection.close();
+            }
+            catch (Exception e){
+                logger.error(e.getMessage());
+            }
         }
 
         return paciente;

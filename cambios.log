@@ -53,3 +53,4 @@ INSERT INTO ODONTOLOGOS (NUMERO_MATRICULA, NOMBRE, APELLIDO) VALUES (?,?,?) [900
 [2024-05-16 21:04:45] [ INFO ] [BD:33] tabla creada con exito
 [2024-05-16 21:04:45] [ INFO ] [OdontologoDAOH2:15] Guardando en memoria odontologo
 [2024-05-16 21:04:52] [ INFO ] [OdontologoDAOH2:36] Buscando en memoria odontologos
+[2024-05-16 21:15:48] [ INFO ] [OdontologoDAOH2:42] Buscando en memoria odontologos

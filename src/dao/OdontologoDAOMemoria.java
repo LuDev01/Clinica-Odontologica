@@ -8,7 +8,13 @@ import java.util.List;
 
 public class OdontologoDAOMemoria implements iDao<Odontologo>{
     private static final Logger logger=Logger.getLogger(OdontologoDAOH2.class);
-    private static List<Odontologo> listadoOdontologosMemoria=new ArrayList<>();
+    private  List<Odontologo> listadoOdontologosMemoria;
+
+    public OdontologoDAOMemoria() {
+        this.listadoOdontologosMemoria=new ArrayList<>();
+        this.listadoOdontologosMemoria.add(new Odontologo(2355,"Rosa","Pabon"));
+        this.listadoOdontologosMemoria.add(new Odontologo(2788,"Mario","Lopez"));
+    }
 
     @Override
     public Odontologo guardar(Odontologo odontologo) {

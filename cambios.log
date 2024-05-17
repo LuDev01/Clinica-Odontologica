@@ -1,0 +1,8 @@
+[2024-05-16 19:29:19] [ ERROR] [BD:30] Nombre de usuario ó password incorrecto
+Wrong user name or password [28000-224]
+[2024-05-16 19:29:19] [ INFO ] [PacienteDAOH2:24] Iniciando la operación de busqueda
+[2024-05-16 19:29:20] [ ERROR] [PacienteDAOH2:42] Nombre de usuario ó password incorrecto
+Wrong user name or password [28000-224]
+[2024-05-16 19:31:17] [ INFO ] [BD:27] tabla creada con exito
+[2024-05-16 19:31:17] [ INFO ] [PacienteDAOH2:24] Iniciando la operación de busqueda
+[2024-05-16 19:31:17] [ INFO ] [Domicilio:22] Iniciando la busqueda de un domicilio con id: 2
